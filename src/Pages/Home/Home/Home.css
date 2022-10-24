@@ -1,0 +1,85 @@
+.heroHeading {
+
+    margin-top: 160px;
+}
+
+.heroImg {
+
+    margin-top: 70px;
+
+}
+
+.m-color {
+
+    color: #7C48CE;
+    font-family: fantasy;
+    font-size: 45px;
+}
+
+
+.m-color span {
+
+    color: #FF625E;
+}
+
+.startBtn {
+
+    background-color: #FF625E;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 30px;
+}
+
+
+.startBtn:hover {
+
+    background-color: #C32D4B;
+    color: white;
+}
+
+.courses {
+
+    margin: 200px 0;
+}
+
+
+/* phone  */
+@media screen and (max-width:576px) {
+
+    .heroHeading {
+
+        margin-top: 90px;
+    }
+
+    .heroImg {
+
+        margin-top: 30px;
+
+    }
+
+    .courses {
+
+        margin: 50px 0;
+    }
+
+}
+
+/* tablet */
+@media screen and (min-width:577px) and (max-width:991px) {
+
+    .heroHeading {
+
+        margin-top: 90px;
+    }
+
+    .heroImg {
+
+        margin-top: 120px;
+
+    }
+
+    .courses {
+
+        margin: 80px 0;
+    }
+}
