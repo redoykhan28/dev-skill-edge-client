@@ -1,0 +1,18 @@
+.s-btn {
+
+    background-color: #FF625E;
+    color: white;
+    border-radius: 30px;
+}
+
+.s-btn:hover {
+
+    background-color: #C32D4B;
+    color: white;
+}
+
+.togcolor {
+
+    color: black;
+    font-size: 30px;
+}
