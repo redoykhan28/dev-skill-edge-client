@@ -1,0 +1,12 @@
+.cat-btn {
+
+    background-color: #7C48CE;
+    color: white;
+}
+
+.cat-btn:hover {
+
+    background-color: #FF625E;
+    color: white;
+
+}

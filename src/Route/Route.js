@@ -6,6 +6,7 @@ import FAQ from "../Pages/FAQ/FAQ"
 import Blog from "../Pages/Blog/Blog"
 import Login from "../Pages/Login/Login"
 import SignUp from "../Pages/SignUp/SignUp"
+import CoursePerCat from "../Pages/Courses/CoursePerCat/CoursePerCat";
 
 //setup route
 export const route = createBrowserRouter([
@@ -27,7 +28,14 @@ export const route = createBrowserRouter([
 
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <Courses></Courses>,
+                loader: () => fetch('https://skill-edge-server.vercel.app/course')
+            },
+
+            {
+                path: '/coursePerCat/:id',
+                element: <CoursePerCat></CoursePerCat>,
+                loader: ({ params }) => fetch(`https://skill-edge-server.vercel.app/courseByCategory/${params.id}`)
             },
 
             {

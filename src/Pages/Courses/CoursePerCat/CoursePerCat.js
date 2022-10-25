@@ -1,11 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import CourseCard from '../Shared/CourseCard/CourseCard';
-import './Courses.css'
-import Categories from './Course_catagories/Categories';
+import CourseCard from '../../Shared/CourseCard/CourseCard';
+import Categories from '../Course_catagories/Categories';
 
-const Courses = () => {
-    const courses = useLoaderData()
+const CoursePerCat = () => {
+    const coursePerCat = useLoaderData()
     return (
         <div className='container'>
             <div className="row courseCard">
@@ -13,17 +12,18 @@ const Courses = () => {
                     <h4 className='text-start mb-5 clr'>All Catagories</h4>
                     <Categories></Categories>
                 </div>
-                <div className="col-md-10 ">
-                    <h4 className='text-center clr mb-3'>Our Courses: {courses.length}</h4>
+                <div className="col-lg-10">
+                    <h4 className='text-center clr mb-3'>Our Courses: {coursePerCat.length}</h4>
                     <div className='card-sizing'>
                         {
-                            courses.map(course => <CourseCard key={course._id} course={course}></CourseCard>)
+                            coursePerCat.map(c => <CourseCard key={c._id} course={c}></CourseCard>)
                         }
                     </div>
+                    <p className='text-muted text-center'><small>Comming soon....</small></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Courses;
+export default CoursePerCat;

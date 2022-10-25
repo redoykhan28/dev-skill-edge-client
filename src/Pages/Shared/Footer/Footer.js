@@ -8,12 +8,12 @@ const Footer = () => {
     return (
         <div className='mt-5'>
             <footer className='p-4 text-center footerbg'>
-                <div className='d-flex justify-content-evenly pt-3'>
+                <div className='d-flex justify-content-evenly pt-4'>
                     <Link className='text-decoration-none text-white fw-bold' to={'/courses'}>Courses</Link>
                     <Link className='text-decoration-none text-white fw-bold' to={'/faq'}>FAQ</Link>
                     <Link className='text-decoration-none text-white fw-bold' to={'/blog'}>Blogs</Link>
                     <Link className='text-decoration-none text-white fw-bold' to={'/login'}>SignIn</Link>
-                    <Link className='text-decoration-none text-white fw-bold' to={'/singup'}>Register</Link>
+                    <Link className='text-decoration-none text-white fw-bold' to={'/singup'}>Registration</Link>
                 </div>
                 <div className='mt-5 mb-2 d-flex justify-content-center'>
                     <a className='text-white mx-2' href="#"><FaFacebook></FaFacebook></a>
