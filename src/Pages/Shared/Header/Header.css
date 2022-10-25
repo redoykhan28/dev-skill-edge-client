@@ -23,3 +23,17 @@
     text-decoration: none;
     border-radius: 30px;
 }
+
+.clr2-btn {
+    background-color: #C32D4B;
+    border-radius: 30px;
+
+}
+
+.clr2-btn:hover {
+
+    background-color: #FF625E;
+    color: white;
+    border-radius: 30px;
+
+}

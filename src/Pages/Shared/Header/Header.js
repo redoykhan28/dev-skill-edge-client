@@ -31,7 +31,7 @@ const Header = () => {
 
                                 <NavLink className={({ isActive }) => isActive ? 'home text-light py-1 py-lg-2 px-3' : 'text-muted mx-3 pt-2 text-decoration-none'} to='/blog'>Blog</NavLink>
 
-                                <NavLink className={'btn s-btn px-4 mt-3 mt-lg-0 ms-lg-5'} to='/login'>Login</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? 'btn clr2-btn text-white px-4 mt-3 mt-lg-0 ms-lg-5' : 'btn s-btn px-4 mt-3 mt-lg-0 ms-lg-5'} to='/login'>Login</NavLink>
 
                                 <div className='d-flex align-items-center'>
                                     <NavLink className={' ms-3 text-decoration-none'} to='/courses'><FaToggleOff className='togcolor' /></NavLink>

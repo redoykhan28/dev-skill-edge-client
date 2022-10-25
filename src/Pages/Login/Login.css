@@ -1,0 +1,49 @@
+.loginCard {
+
+    width: 25rem;
+    margin: 0 auto;
+    margin-top: 160px;
+}
+
+.logbtn {
+
+    width: 100%;
+    background-color: #7C48CE;
+    color: white;
+}
+
+.logbtn:hover {
+
+    background-color: #6d1dee;
+    color: white;
+
+}
+
+.logo {
+
+    width: 50px;
+
+}
+
+.logo2 {
+
+    width: 45px;
+
+}
+
+.social {
+
+    cursor: pointer;
+}
+
+/* phone  */
+@media screen and (max-width:576px) {
+
+    .loginCard {
+
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 160px;
+    }
+
+}
