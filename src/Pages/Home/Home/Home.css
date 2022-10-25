@@ -42,6 +42,12 @@
     margin: 200px 0;
 }
 
+.card-sizing {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 
 /* phone  */
 @media screen and (max-width:576px) {
@@ -60,6 +66,12 @@
     .courses {
 
         margin: 50px 0;
+    }
+
+    .card-sizing {
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 
 }
@@ -81,5 +93,11 @@
     .courses {
 
         margin: 80px 0;
+    }
+
+    .card-sizing {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }

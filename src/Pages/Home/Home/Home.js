@@ -1,9 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import headerImage from '../../../images/3785210.jpg'
+import CourseCard from '../../Shared/CourseCard/CourseCard';
 import './Home.css'
 
 const Home = () => {
+
+    //load course data
+    const courses = useLoaderData().slice(0, 3);
+    // console.log(courses)
+
     return (
         <div>
             {/* hero section start  */}
@@ -27,9 +33,19 @@ const Home = () => {
             </section >
             {/* hero section end  */}
 
+            {/* leatest course start  */}
             <section className='courses' id='courses'>
                 <h3 className='text-center'>Explore Our leatest courses</h3>
+                <div className='card-sizing my-5'>
+                    {
+                        courses.map(course => <CourseCard key={course._id} course={course}></CourseCard>)
+                    }
+                </div>
+                <small className='text-end my-4'><Link to='/courses'>see more</Link>
+                </small>
             </section>
+
+            {/* leatest course ends */}
 
 
         </div >

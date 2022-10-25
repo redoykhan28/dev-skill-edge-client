@@ -15,12 +15,14 @@ export const route = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('https://skill-edge-server.vercel.app/course')
             },
 
             {
                 path: '/home',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('https://skill-edge-server.vercel.app/course')
             },
 
             {
