@@ -1,0 +1,28 @@
+.checkCard {
+
+    width: 40rem;
+    margin: 130px auto;
+}
+
+.purchase-btn {
+
+    color: white;
+    background: rgb(205, 117, 188);
+    background: linear-gradient(90deg, rgba(205, 117, 188, 1) 2%, rgba(220, 73, 118, 1) 43%, rgba(236, 33, 45, 1) 100%);
+}
+
+.selector {
+
+    width: 40%;
+    outline: none;
+}
+
+/* phone  */
+@media screen and (max-width:576px) {
+    .checkCard {
+
+        width: 100%;
+        margin: 130px auto;
+    }
+
+}
