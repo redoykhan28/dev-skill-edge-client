@@ -1,6 +1,7 @@
 .heroHeading {
 
     margin-top: 160px;
+    margin-bottom: 160px;
 }
 
 .heroImg {
@@ -98,11 +99,13 @@
     .heroHeading {
 
         margin-top: 90px;
+        margin-bottom: 90px;
+
     }
 
     .heroImg {
 
-        margin-top: 30px;
+        margin-top: 20px;
 
     }
 
@@ -125,6 +128,8 @@
     .heroHeading {
 
         margin-top: 90px;
+        margin-bottom: 90px;
+
     }
 
     .heroImg {

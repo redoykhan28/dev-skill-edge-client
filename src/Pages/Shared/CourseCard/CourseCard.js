@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 
 const CourseCard = ({ course }) => {
-    console.log(course)
-    const { title, img, price, ratings } = course
+    // console.log(course)
+    const { _id, title, img, price, ratings } = course
     return (
         <div>
             <div className="card cd">
@@ -20,7 +20,7 @@ const CourseCard = ({ course }) => {
                             <small className='fw-bold'>{ratings}</small>
                         </div>
                     </div>
-                    <Link><button className='btn btn-card mt-4'>See Details</button></Link>
+                    <Link to={`/details/${_id}`}><button className='btn btn-card mt-4'>See Details</button></Link>
                 </div>
             </div>
         </div>
