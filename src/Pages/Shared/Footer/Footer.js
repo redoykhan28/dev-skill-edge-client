@@ -1,0 +1,32 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css'
+import { FaFacebook, FaTwitter, FaInstagram, FaMailBulk } from "react-icons/fa";
+
+
+const Footer = () => {
+    return (
+        <div className='mt-5'>
+            <footer className='p-4 text-center footerbg'>
+                <div className='d-flex justify-content-evenly pt-3'>
+                    <Link className='text-decoration-none text-white fw-bold' to={'/courses'}>Courses</Link>
+                    <Link className='text-decoration-none text-white fw-bold' to={'/faq'}>FAQ</Link>
+                    <Link className='text-decoration-none text-white fw-bold' to={'/blog'}>Blogs</Link>
+                    <Link className='text-decoration-none text-white fw-bold' to={'/login'}>SignIn</Link>
+                    <Link className='text-decoration-none text-white fw-bold' to={'/singup'}>Register</Link>
+                </div>
+                <div className='mt-5 mb-2 d-flex justify-content-center'>
+                    <a className='text-white mx-2' href="#"><FaFacebook></FaFacebook></a>
+                    <a className='text-white mx-2' href="#"><FaTwitter></FaTwitter></a>
+                    <a className='text-white mx-2' href="#"><FaInstagram></FaInstagram></a>
+                    <a className='text-white mx-2' href="#"><FaMailBulk></FaMailBulk></a>
+                </div>
+                <hr className='text-white' />
+
+                <p className='text-center text-white mt-5'>CopyRight Skill Edge 2022</p>
+            </footer>
+        </div>
+    );
+};
+
+export default Footer;

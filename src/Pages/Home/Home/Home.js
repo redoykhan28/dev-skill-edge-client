@@ -20,7 +20,7 @@ const Home = () => {
     // console.log(courses)
 
     return (
-        <div>
+        <div className='container'>
             {/* hero section start  */}
             <section className='hero my-5'>
                 <div className="row">
