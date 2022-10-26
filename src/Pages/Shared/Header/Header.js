@@ -48,7 +48,7 @@ const Header = () => {
 
                                 <NavLink className={({ isActive }) => isActive ? 'home text-light py-1 py-lg-2 px-3' : 'text-muted mx-3 pt-2 text-decoration-none'} to='/faq'>FAQ</NavLink>
 
-                                <NavLink className={({ isActive }) => isActive ? 'home text-light py-1 py-lg-2 px-3' : 'text-muted mx-3 pt-2 text-decoration-none'} to='/blog'>Blog</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? 'home text-light py-1 py-lg-2 px-3' : 'text-muted mx-3 pt-2 text-decoration-none'} to='/blog'>Blogs</NavLink>
 
                                 {/* condition for login  */}
                                 {
