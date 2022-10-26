@@ -11,7 +11,7 @@ const Checkout = () => {
 
     const purchaseHandler = () => {
 
-        toast.success(`${title} Purchase Successfully`)
+        toast.success(`Congrats!! ${title} Purchase Successfully`)
 
     }
 

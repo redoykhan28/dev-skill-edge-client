@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaDownload } from "react-icons/fa";
+import Pdf from "react-to-pdf";
 import './CourseDetails.css'
+
+
+const ref = React.createRef();
 
 const CourseDetails = () => {
 
@@ -11,7 +15,13 @@ const CourseDetails = () => {
 
     return (
         <div className='container'>
-            <div className="row">
+            <div className='text-end'>
+                <Pdf targetRef={ref} filename="Course details.pdf">
+                    {({ toPdf }) => <Link onClick={toPdf} className='text-decoration-none'><button className='btn downloadbtn'><FaDownload />  Download</button></Link>
+                    }
+                </Pdf>
+            </div>
+            <div ref={ref} className="row">
                 <div className="col-md-6 CourseHeading">
                     <h2 className='my-3'>{title}</h2>
                     <p className='mb-3'>{description}</p>
@@ -26,7 +36,7 @@ const CourseDetails = () => {
                     <Link to={`/checkout/${_id}`}><button className='btn enroll-btn'>Get Premium Access</button></Link>
                 </div>
                 <div className="col-md-6">
-                    <img className='img-fluid heroImg' src={img} alt="img" />
+                    <img className='img-fluid mb-5' src={img} alt="img" />
                 </div>
             </div>
         </div>

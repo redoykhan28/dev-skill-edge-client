@@ -1,6 +1,25 @@
 .CourseHeading {
 
-    margin-top: 200px;
+    margin-top: 30px;
+}
+
+
+
+.downloadbtn {
+
+    margin-top: 100px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(205, 117, 188);
+    background: linear-gradient(90deg, rgba(205, 117, 188, 1) 2%, rgba(220, 73, 118, 1) 57%, rgba(236, 33, 45, 1) 100%);
+    color: white;
+}
+
+.downloadbtn:hover {
+
+
+    color: black;
 }
 
 .enroll-btn {
@@ -24,7 +43,7 @@
 
     .CourseHeading {
 
-        margin-top: 120px;
+        margin-top: 40px;
     }
 
 }
@@ -33,6 +52,6 @@
 @media screen and (min-width:577px) and (max-width:991px) {
     .CourseHeading {
 
-        margin-top: 150px;
+        margin-top: 50px;
     }
 }
