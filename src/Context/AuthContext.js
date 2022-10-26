@@ -1,7 +1,7 @@
 import React from 'react';
 import { createContext } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import { app } from '../Firebase/Firebase.init';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import app from '../Firebase/Firebase.init';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -45,6 +45,12 @@ const AuthContext = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    //forgot password
+    const passwordReset = (email) => {
+
+        return sendPasswordResetEmail(auth, email)
+    }
+
     //signout
     const signout = () => {
         setLoader(true);
@@ -85,7 +91,7 @@ const AuthContext = ({ children }) => {
     }, [])
 
     //setting authValue
-    const authInfo = { googleSignin, emailPassSignup, emailPassLogin, signout, user, handleVarificationMail, updateUser, githubSignin, loader };
+    const authInfo = { googleSignin, emailPassSignup, emailPassLogin, signout, user, handleVarificationMail, updateUser, githubSignin, passwordReset, loader };
     return (
         <div>
             <authContext.Provider value={authInfo}>

@@ -32,6 +32,7 @@ const SignUp = () => {
         if (password.length < 8) {
 
             setError('Password Should be 8 lenght long!')
+            return
         }
 
         //setup signup
@@ -46,7 +47,10 @@ const SignUp = () => {
                 handleProfile(name, photo)
                 setError(null)
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                setError('Email is already in use')
+            })
     }
 
     //update profile
@@ -78,11 +82,11 @@ const SignUp = () => {
                     <form onSubmit={submitHandler}>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail" className="form-label input">Full Name</label>
-                            <input name='name' type="text" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp" />
+                            <input name='name' type="text" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label input">Email address</label>
-                            <input name='email' type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input name='email' type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label input">Photo Url</label>
@@ -90,7 +94,7 @@ const SignUp = () => {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                            <input name='password' type="password" className="form-control" id="exampleInputPassword1" />
+                            <input name='password' type="password" className="form-control" id="exampleInputPassword1" required />
                         </div>
 
                         <button type="submit" className="btn mt-4 mb-2 rounded-0 signUpbtn">SignUp</button>

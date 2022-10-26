@@ -15,6 +15,10 @@ const Login = () => {
     //set state for error
     const [error, setError] = useState(null);
 
+    //state for mail
+    const [mail, setMail] = useState(null);
+
+
     //use navigation
     const navigate = useNavigate();
 
@@ -23,7 +27,7 @@ const Login = () => {
     const from = location?.state?.from?.pathname || '/home';
 
     //use context
-    const { googleSignin, emailPassLogin, githubSignin } = useContext(authContext);
+    const { googleSignin, emailPassLogin, githubSignin, passwordReset } = useContext(authContext);
 
     // google signin 
     const googleProvider = new GoogleAuthProvider()
@@ -34,6 +38,10 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+            })
+            .catch(err => {
+
+                console.log(err)
             })
 
     }
@@ -48,6 +56,10 @@ const Login = () => {
 
                 const user = result.user;
                 console.log(user)
+            })
+            .catch(err => {
+
+                console.log(err)
             })
 
     }
@@ -77,6 +89,31 @@ const Login = () => {
             })
     }
 
+    //take value from email
+    const handleEmail = (e) => {
+
+        const email = e.target.value;
+        console.log(email)
+        setMail(email);
+    }
+
+    //reset password
+    const setupPsd = () => {
+
+        passwordReset(mail)
+            .then(() => {
+
+                toast.success('Check your email to reset your password')
+                setError(null)
+            })
+            .catch(err => {
+
+                console.log(err);
+                setError('Please type your email')
+            })
+
+    }
+
     return (
         <div className='container'>
             <div className="card  p-3 loginCard">
@@ -86,15 +123,15 @@ const Login = () => {
                     <form onSubmit={submitHandler}>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label input">Email address</label>
-                            <input name='email' type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input onBlur={handleEmail} name='email' type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
 
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                            <input name='password' type="password" className="form-control" id="exampleInputPassword1" />
+                            <input name='password' type="password" className="form-control" id="exampleInputPassword1" required />
                         </div>
 
-                        <Link className='text-decoration-none'><small className='clr '>Forget Password</small></Link>
+                        <Link onClick={setupPsd} className='text-decoration-none'><small className='clr '>Forget Password</small></Link>
 
                         <button type="submit" className="btn mt-4 mb-2 rounded-0 logbtn">Login</button>
                         <small className='text-danger'>{error}</small>

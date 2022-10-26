@@ -5,13 +5,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDg01stbIOU3oOLPmJUbesHHnvhhvR_RsM",
-    authDomain: "skilled-edge-e-learning-site.firebaseapp.com",
-    projectId: "skilled-edge-e-learning-site",
-    storageBucket: "skilled-edge-e-learning-site.appspot.com",
-    messagingSenderId: "38698896576",
-    appId: "1:38698896576:web:1888cf5826da42c152b125"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+export default app;
