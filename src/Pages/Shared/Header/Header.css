@@ -37,3 +37,9 @@
     border-radius: 30px;
 
 }
+
+.p-img {
+
+    width: 30px;
+    cursor: pointer;
+}

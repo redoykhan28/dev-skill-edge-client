@@ -14,7 +14,7 @@ const Courses = () => {
                     <Categories></Categories>
                 </div>
                 <div className="col-md-10 ">
-                    <h4 className='text-center clr mb-3'>Our Courses: {courses.length}</h4>
+                    <h4 className='text-center mb-3'>Our Courses: {courses.length}</h4>
                     <div className='card-sizing'>
                         {
                             courses.map(course => <CourseCard key={course._id} course={course}></CourseCard>)

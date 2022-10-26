@@ -12,9 +12,9 @@ const CoursePerCat = () => {
                     <h4 className='text-start mb-5 clr'>All Catagories</h4>
                     <Categories></Categories>
                 </div>
-                <div className="col-lg-10">
-                    <h4 className='text-center clr mb-3'>Our Courses: {coursePerCat.length}</h4>
-                    <div className='card-sizing'>
+                <div className="col-md-10">
+                    <h4 className='text-center mb-3'>Our Courses: {coursePerCat.length}</h4>
+                    <div className='card-sizing mx-5'>
                         {
                             coursePerCat.map(c => <CourseCard key={c._id} course={c}></CourseCard>)
                         }

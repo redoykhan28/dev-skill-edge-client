@@ -124,26 +124,26 @@ const Home = () => {
                         <h3 className='text-center text-white'>Live Projects Demo</h3>
                         <h4 className='text-center text-white'>With Real Work Experience </h4>
                         <p className='text-white'><small>We are going to provide 20+ live projects in Full stack development with real work experience.ypu can add those projects in your resume/cv. so,If u want to start a great career then lets Enroll..</small></p>
-                        <Link to='/blog'><button className='btn btclr fw-bold'>Enroll Now <FaArrowRight></FaArrowRight></button></Link>
+                        <Link to='/courses'><button className='btn btclr fw-bold'>Enroll Now <FaArrowRight></FaArrowRight></button></Link>
                     </div>
 
                     <div className="col-lg-6 my-5">
-                        <div id="carouselExampleControls" className="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div id="carouselExampleControls" className="carousel slide  carousel-fade" data-bs-ride="carousel">
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img src={slide1} className="d-block w-100 carimage" alt="img" />
+                                    <img src={slide5} className="d-block w-100 carimage" alt="img" />
                                 </div>
-                                <div className="carousel-item active">
+                                <div className="carousel-item ">
                                     <img src={slide2} className="d-block w-100 carimage" alt="img" />
                                 </div>
-                                <div className="carousel-item active">
+                                <div className="carousel-item ">
                                     <img src={slide3} className="d-block w-100 carimage" alt="img" />
                                 </div>
                                 <div className="carousel-item">
-                                    <img src={slide4} className="d-block w-100 carimage" alt="img" />
+                                    <img src={slide1} className="d-block w-100 carimage" alt="img" />
                                 </div>
                                 <div className="carousel-item">
-                                    <img src={slide5} className="d-block w-100 carimage" alt="img" />
+                                    <img src={slide4} className="d-block w-100 carimage" alt="img" />
                                 </div>
                             </div>
                             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

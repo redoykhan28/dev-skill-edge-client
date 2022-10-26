@@ -15,13 +15,13 @@ const CourseDetails = () => {
                 <div className="col-md-6 CourseHeading">
                     <h2 className='my-3'>{title}</h2>
                     <p className='mb-3'>{description}</p>
-                    <div className='d-flex justify-content-between my-4'>
+                    <div className='d-flex flex-column flex-lg-row justify-content-between my-4'>
                         <div>
                             <h4 className='mb-4'>Starts with <span className='text-danger'>{price}</span> only! </h4>
                             <h6>Platform: {duration.platform}</h6>
                             <h6>Duration: {duration.time}</h6>
                         </div>
-                        <h6><FaStar className='text-warning pb-1' /> {ratings}</h6>
+                        <h6 className='mt-2'><span className='text-muted'>ratings:</span> <FaStar className='text-warning pb-1' />  {ratings}</h6>
                     </div>
                     <Link to={`/checkout/${_id}`}><button className='btn enroll-btn'>Get Premium Access</button></Link>
                 </div>

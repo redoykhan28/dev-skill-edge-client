@@ -9,6 +9,8 @@ import SignUp from "../Pages/SignUp/SignUp"
 import CoursePerCat from "../Pages/Courses/CoursePerCat/CoursePerCat";
 import CourseDetails from "../Pages/Courses/CourseDetails/CourseDetails";
 import Checkout from "../Pages/Courses/CheckOut/Checkout";
+import Profile from "../Pages/Profile/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 //setup route
 export const route = createBrowserRouter([
@@ -49,7 +51,7 @@ export const route = createBrowserRouter([
 
             {
                 path: 'checkout/:id',
-                element: <Checkout></Checkout>,
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://skill-edge-server.vercel.app/courseDetails/${params.id}`)
             },
 
@@ -72,6 +74,10 @@ export const route = createBrowserRouter([
                 path: '/signup',
                 element: <SignUp></SignUp>
             },
+            {
+                path: '/profile',
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
+            }
         ]
     }
 ])

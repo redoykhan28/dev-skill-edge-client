@@ -1,0 +1,16 @@
+.clr2 {
+
+    color: #FF625E;
+}
+
+.signUpbtn {
+    width: 100%;
+    background-color: #FF625E;
+    color: white;
+}
+
+.signUpbtn:hover {
+
+    background-color: #C32D4B;
+    color: white;
+}

@@ -10,7 +10,7 @@ const Footer = () => {
             <footer className='p-4 text-center footerbg'>
                 <div className='d-flex flex-column flex-md-row  justify-content-evenly pt-4'>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/courses'}>Courses</Link>
-                    <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/faq'}>FAQ</Link>
+                    <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/profile'}>Profile</Link>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/blog'}>Blogs</Link>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/login'}>SignIn</Link>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/singup'}>Registration</Link>
@@ -23,7 +23,7 @@ const Footer = () => {
                 </div>
                 <hr className='text-white' />
 
-                <p className='text-center text-white mt-5'>CopyRight Skill Edge 2022</p>
+                <p className='text-center text-white mt-5'>Copyright Skill Edge 2022</p>
             </footer>
         </div>
     );
