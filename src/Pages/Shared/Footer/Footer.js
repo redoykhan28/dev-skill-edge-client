@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css'
 import { FaFacebook, FaTwitter, FaInstagram, FaMailBulk } from "react-icons/fa";
+import { useContext } from 'react';
+import { modeContext } from '../../../Context/ModeContext';
 
 
 const Footer = () => {
+
+    //use context
+    const { mode } = useContext(modeContext);
+
     return (
         <div className='mt-5'>
-            <footer className='p-4 text-center footerbg'>
+            <footer className={mode ? 'p-4 text-center footerbg2' : 'p-4 text-center footerbg'}>
                 <div className='d-flex flex-column flex-md-row  justify-content-evenly pt-4'>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/courses'}>Courses</Link>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/profile'}>Profile</Link>

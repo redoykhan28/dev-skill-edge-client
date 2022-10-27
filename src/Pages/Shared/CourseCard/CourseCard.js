@@ -2,14 +2,20 @@ import React from 'react';
 import './CourseCard.css'
 import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { modeContext } from '../../../Context/ModeContext';
 
 
 const CourseCard = ({ course }) => {
+
+    // use context 
+    const { mode } = useContext(modeContext)
+
     // console.log(course)
     const { _id, title, img, price, ratings } = course
     return (
         <div>
-            <div className="card cd">
+            <div className={mode ? "card cd2" : "card cd"}>
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h6>{title}</h6>

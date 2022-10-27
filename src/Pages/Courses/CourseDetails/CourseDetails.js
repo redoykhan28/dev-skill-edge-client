@@ -3,11 +3,16 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar, FaDownload } from "react-icons/fa";
 import Pdf from "react-to-pdf";
 import './CourseDetails.css'
+import { useContext } from 'react';
+import { modeContext } from '../../../Context/ModeContext';
 
 
 const ref = React.createRef();
 
 const CourseDetails = () => {
+
+    //use context
+    const { mode } = useContext(modeContext)
 
     const details = useLoaderData();
     // console.log(details)
@@ -22,7 +27,7 @@ const CourseDetails = () => {
                 </Pdf>
             </div>
             <div ref={ref} className="row">
-                <div className="col-md-6 CourseHeading">
+                <div className={mode ? "col-md-6 CourseHeading text-light" : "col-md-6 CourseHeading"}>
                     <h2 className='my-3'>{title}</h2>
                     <p className='mb-3'>{description}</p>
                     <div className='d-flex flex-column flex-lg-row justify-content-between my-4'>
@@ -36,7 +41,12 @@ const CourseDetails = () => {
                     <Link to={`/checkout/${_id}`}><button className='btn enroll-btn'>Get Premium Access</button></Link>
                 </div>
                 <div className="col-md-6">
-                    <img className='img-fluid mb-5' src={img} alt="img" />
+                    {
+                        mode ?
+                            <img className='img-fluid w-75 mx-5 mt-5 mb-5' src={img} alt="img" />
+                            :
+                            <img className='img-fluid mb-5' src={img} alt="img" />
+                    }
                 </div>
             </div>
         </div>

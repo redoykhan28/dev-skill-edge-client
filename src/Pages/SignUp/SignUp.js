@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { authContext } from '../../Context/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
 import './SignUp.css'
+import { modeContext } from '../../Context/ModeContext';
 
 const SignUp = () => {
 
@@ -17,6 +18,8 @@ const SignUp = () => {
 
     //use context
     const { emailPassSignup, handleVarificationMail, updateUser } = useContext(authContext)
+    const { mode } = useContext(modeContext)
+
 
     //submit button handling
     const submitHandler = (e) => {
@@ -74,8 +77,8 @@ const SignUp = () => {
     }
 
     return (
-        <div className='container'>
-            <div className="card  p-3 loginCard">
+        <div className={mode ? 'container pt-5 ' : 'container '}>
+            <div className={mode ? "card  p-3 loginCard2" : "card  p-3 loginCard"}>
 
                 <div className="card-body">
                     <h5 className='mb-5'>SignUp</h5>

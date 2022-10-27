@@ -5,6 +5,17 @@
     margin-top: 160px;
 }
 
+.loginCard2 {
+
+    width: 25rem;
+    margin: 0 auto;
+    margin-top: 90px;
+    padding-top: 70px;
+    background-color: #1B1834;
+    color: white;
+
+}
+
 .logbtn {
 
     width: 100%;

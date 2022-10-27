@@ -3,10 +3,12 @@ import { useContext } from 'react';
 import { authContext } from '../../Context/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
 import './Profile.css'
+import { modeContext } from '../../Context/ModeContext';
 
 const Profile = () => {
     //use context
     const { user, updateUser } = useContext(authContext);
+    const { mode } = useContext(modeContext)
 
     //state for update name
     const [name, setName] = useState(user.displayName)
@@ -37,11 +39,11 @@ const Profile = () => {
     }
 
     return (
-        <div className='container'>
+        <div className={mode ? 'container pt-5' : 'container'}>
             {/* profile info section  */}
-            <h3 className='ola text-center mb-5'>Welcome <span className='clr'>{user.displayName}!</span></h3>
+            <h3 className={mode ? 'ola2 text-center text-light mb-5' : 'ola text-center mb-5'}>Welcome <span className='clr'>{user.displayName}!</span></h3>
             <section>
-                <div className="card mb-3 p-lg-4 p-1 profile-card" >
+                <div className={mode ? "card mb-3 p-lg-4 p-1 profile-card2" : "card mb-3 p-lg-4 p-1 profile-card"} >
                     <div className="row g-0">
                         <h4 className='text-center mb-5'>Profile Info</h4>
                         <div className='d-flex align-items-center'>
@@ -62,8 +64,8 @@ const Profile = () => {
             {/* update profile section  */}
             <section>
 
-                <h4 className='text-center ptxt'>Update your profile</h4>
-                <div className="card p-3 profile-update">
+                <h4 className={mode ? 'text-center text-light ptxt' : 'text-center ptxt'}>Update your profile</h4>
+                <div className={mode ? "card p-3 profile-update2" : "card p-3 profile-update"}>
                     <div className="card-body">
                         <form onSubmit={btnHandler}>
                             <div className="mb-3">
@@ -80,7 +82,7 @@ const Profile = () => {
                             </div>
 
 
-                            <button type="submit" className="btn logbtn text-white">Update</button>
+                            <button type="submit" className="btn logbtn text-white my-3">Update</button>
                         </form>
                     </div>
                 </div>

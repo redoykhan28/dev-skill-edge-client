@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../images/d0d29493594148fd9a0e3c13fdc85c4c (3).png'
+import logo2 from '../../../images/headbgremove.png'
 import './Header.css'
-import { FaToggleOff, FaSun } from "react-icons/fa";
+import { FaToggleOff, FaToggleOn, FaSun, FaMoon } from "react-icons/fa";
 import { useContext } from 'react';
 import { authContext } from '../../../Context/AuthContext';
-import { FaUserTie } from 'react-icons/fa';
+import { modeContext } from '../../../Context/ModeContext';
 
 
 
@@ -13,6 +14,7 @@ const Header = () => {
 
     //use context
     const { signout, user } = useContext(authContext);
+    const { mode, setMode } = useContext(modeContext)
 
     //signout
     const handleSignOut = () => {
@@ -23,14 +25,30 @@ const Header = () => {
             })
     }
 
+    //for dark mode
+    const toogleHandlerDark = () => {
+
+        setMode(true)
+    }
+    //for light mode
+    const toogleHandlerLight = () => {
+
+        setMode(false)
+    }
+
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-white fixed-top py-3">
+            <nav className={mode === true ? "navbar navbar-expand-lg dark-bg fixed-top py-3" : "navbar navbar-expand-lg bg-white fixed-top py-3"}>
                 <div className="container d-flex  justify-content-between align-items-center">
                     <div className="f-postion">
                         <Link className="navbar-brand" to="/">
-                            <img className='img-fluid w-75' src={logo} alt="logo" />
+                            {
+                                mode ?
+                                    <img className='img-fluid w-75' src={logo2} alt="logo" />
+                                    :
+                                    <img className='img-fluid w-75' src={logo} alt="logo" />
+                            }
                         </Link>
                     </div>
                     <div className="s-position">
@@ -69,16 +87,25 @@ const Header = () => {
                                             </li>
                                         </div>
                                         :
-                                        <NavLink className={({ isActive }) => isActive ? 'btn clr2-btn text-white px-4 mt-3 mt-lg-0 ms-lg-5' : 'btn s-btn px-4 mt-3 mt-lg-0 ms-lg-5'} to='/login'>Login</NavLink>
+                                        <NavLink className={({ isActive }) => isActive && mode ? 'btn clr2-btn text-white px-4 mt-3 mt-lg-0 ms-lg-5' : 'btn s-btn px-4 mt-3 mt-lg-0 ms-lg-5'} to='/login'>Login</NavLink>
 
                                 }
 
 
+                                {
+                                    mode === true ?
+                                        <div className='d-flex align-items-center'>
+                                            <NavLink onClick={toogleHandlerLight} className={' ms-3 text-decoration-none'}><FaToggleOn className='togcolor' /></NavLink>
+                                            <small className=' mx-2 fw-bold text-white'>Dark <FaMoon className='fs-4 text-white'></FaMoon></small>
+                                        </div>
 
-                                <div className='d-flex align-items-center'>
-                                    <NavLink className={' ms-3 text-decoration-none'} to='/courses'><FaToggleOff className='togcolor' /></NavLink>
-                                    <small className=' mx-2 fw-bold'>Light <FaSun className='fs-4'></FaSun></small>
-                                </div>
+                                        :
+                                        <div className='d-flex align-items-center'>
+                                            <NavLink onClick={toogleHandlerDark} className={' ms-3 text-decoration-none'}><FaToggleOff className='togcolor' /></NavLink>
+                                            <small className=' mx-2 fw-bold'>Light <FaSun className='fs-4'></FaSun></small>
+                                        </div>
+                                }
+
                             </ul>
                         </div>
                     </div>

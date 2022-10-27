@@ -30,6 +30,7 @@
 
 }
 
+
 .clr2-btn:hover {
 
     background-color: #FF625E;
@@ -42,4 +43,11 @@
 
     width: 30px;
     cursor: pointer;
+}
+
+/* darkmode css  */
+.dark-bg {
+
+    background: rgb(28, 24, 53);
+    background: linear-gradient(90deg, rgba(28, 24, 53, 1) 30%, rgba(44, 24, 59, 1) 62%, rgba(107, 22, 81, 1) 100%);
 }

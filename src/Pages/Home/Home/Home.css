@@ -60,9 +60,23 @@
     color: #B85744;
 }
 
+.sText2 {
+
+    font-size: 50px;
+    color: #7C48CE;
+}
+
 .projectBg {
 
     background-color: #FF625E;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.projectBg2 {
+
+    background: rgb(28, 24, 53);
+    background: linear-gradient(90deg, rgba(28, 24, 53, 1) 26%, rgba(107, 22, 81, 1) 91%);
     border-radius: 15px;
     padding: 10px;
 }

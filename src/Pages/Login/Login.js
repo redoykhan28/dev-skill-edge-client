@@ -8,6 +8,7 @@ import { authContext } from '../../Context/AuthContext';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
+import { modeContext } from '../../Context/ModeContext';
 
 
 const Login = () => {
@@ -28,6 +29,8 @@ const Login = () => {
 
     //use context
     const { googleSignin, emailPassLogin, githubSignin, passwordReset } = useContext(authContext);
+    const { mode } = useContext(modeContext)
+
 
     // google signin 
     const googleProvider = new GoogleAuthProvider()
@@ -115,8 +118,8 @@ const Login = () => {
     }
 
     return (
-        <div className='container'>
-            <div className="card  p-3 loginCard">
+        <div className={mode ? 'container pt-5 ' : 'container '}>
+            <div className={mode ? "card  p-3 loginCard2" : "card  p-3 loginCard"}>
 
                 <div className="card-body">
                     <h5 className='mb-5'>Login</h5>
@@ -143,11 +146,11 @@ const Login = () => {
             </div>
             <p className='text-center my-4'><small>or</small></p>
 
-            <div onClick={handleGoogle} className='d-flex justify-content-center social'>
+            <div onClick={handleGoogle} className={mode ? 'd-flex justify-content-center text-white social' : 'd-flex justify-content-center social'}>
                 <img className='img-fluid logo ms-2' src={logo1} alt="logo" />
                 <p className='mt-2'>Continiue with Google</p>
             </div>
-            <div onClick={handleGit} className='d-flex justify-content-center mt-3 social'>
+            <div onClick={handleGit} className={mode ? 'd-flex justify-content-center text-white social' : 'd-flex justify-content-center social'}>
                 <img className='img-fluid logo2 me-1 ms-3' src={logo2} alt="logo" />
                 <p className='mt-2'>Continiue with GitHub</p>
             </div>

@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaNewspaper } from "react-icons/fa";
+import { modeContext } from '../../Context/ModeContext';
 import image from '../../images/Bloggers and influencers writing articles.jpg'
+import image2 from '../../images/Blogging-pana.png'
 import './Blog.css'
 
 const Blog = () => {
+
+    //use context
+    const { mode } = useContext(modeContext);
+
     return (
         <div className='container'>
 
             <div className="row">
                 <div className="col-12 blogHead text-center">
-                    <h3 className='text-center btxt'>Welcome to our <span className='btxt2'>Blogs <FaNewspaper></FaNewspaper></span> </h3>
-                    <img className='img-fluid w-75' src={image} alt="img" />
+                    <h3 className={mode ? 'text-center btxt3 mt-3' : 'text-center btxt'}>Welcome to our <span className='btxt2'>Blogs <FaNewspaper></FaNewspaper></span> </h3>
+                    {
+                        mode ?
+                            <img className='img-fluid w-50' src={image2} alt="img" />
+                            :
+                            <img className='img-fluid w-75' src={image} alt="img" />
+
+                    }
                 </div>
 
-                <div className='my-5 w-75 mx-auto'>
+                <div className={mode ? 'my-5 text-light w-75 mx-auto' : 'my-5 w-75 mx-auto'}>
                     <h4 className='my-5'>Blogs</h4>
                     <div className='mb-5'>
                         <h5 className='my-3'>1. what is cors?</h5>
