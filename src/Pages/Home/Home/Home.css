@@ -101,10 +101,16 @@
     color: #FF625E;
 }
 
+.btclr2 {
+
+    background-color: white;
+    color: rgba(107, 22, 81, 1);
+}
+
 .btclr:hover {
 
     background-color: rgb(221, 214, 214);
-    color: #FF625E;
+    color: rgba(107, 22, 81, 1);
 }
 
 

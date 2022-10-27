@@ -149,7 +149,7 @@ const Home = () => {
                         <h3 className='text-center text-white'>Live Projects Demo</h3>
                         <h4 className='text-center text-white'>With Real Work Experience </h4>
                         <p className='text-white'><small>We are going to provide 20+ live projects in Full stack development with real work experience.ypu can add those projects in your resume/cv. so,If u want to start a great career then lets Enroll..</small></p>
-                        <Link to='/courses'><button className='btn btclr fw-bold'>Enroll Now <FaArrowRight></FaArrowRight></button></Link>
+                        <Link to='/courses'><button className={mode ? 'btn btclr2 fw-bold' : 'btn btclr fw-bold'}>Enroll Now <FaArrowRight></FaArrowRight></button></Link>
                     </div>
 
                     <div className="col-lg-6 my-5">
