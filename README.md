@@ -1,7 +1,7 @@
 Project Name: Skill Edge
 -
 
-Live Website Link:
+Live Website Link: https://skilled-edge-e-learning-site.web.app/
 
 Technology Used:
 1. Framework
