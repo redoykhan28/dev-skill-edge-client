@@ -24,7 +24,7 @@ const CoursePerCat = () => {
                             coursePerCat.map(c => <CourseCard key={c._id} course={c}></CourseCard>)
                         }
                     </div>
-                    <p className='text-muted text-center'><small>Comming soon....</small></p>
+                    <p className='text-muted text-center'><small>Coming soon....</small></p>
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ const Footer = () => {
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/profile'}>Profile</Link>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/blog'}>Blogs</Link>
                     <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/login'}>SignIn</Link>
-                    <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/singup'}>Registration</Link>
+                    <Link className='text-decoration-none text-white fw-bold my-3 my-md-0' to={'/signup'}>Registration</Link>
                 </div>
                 <div className='mt-5 mb-2 d-flex justify-content-center'>
                     <a className='text-white mx-2' href="#"><FaFacebook></FaFacebook></a>

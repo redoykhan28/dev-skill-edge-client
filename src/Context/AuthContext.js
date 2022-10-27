@@ -57,12 +57,6 @@ const AuthContext = ({ children }) => {
         return signOut(auth)
     }
 
-    //google verification
-    let handleVarificationMail = () => {
-
-        return sendEmailVerification(auth.currentUser)
-    }
-
     //set display name
     const updateUser = (name, photo) => {
         setLoader(true);
@@ -91,7 +85,7 @@ const AuthContext = ({ children }) => {
     }, [])
 
     //setting authValue
-    const authInfo = { googleSignin, emailPassSignup, emailPassLogin, signout, user, handleVarificationMail, updateUser, githubSignin, passwordReset, loader };
+    const authInfo = { googleSignin, emailPassSignup, emailPassLogin, signout, user, updateUser, githubSignin, passwordReset, loader };
     return (
         <div>
             <authContext.Provider value={authInfo}>

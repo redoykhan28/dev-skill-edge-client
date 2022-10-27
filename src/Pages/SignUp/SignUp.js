@@ -17,7 +17,7 @@ const SignUp = () => {
 
 
     //use context
-    const { emailPassSignup, handleVarificationMail, updateUser } = useContext(authContext)
+    const { emailPassSignup, updateUser } = useContext(authContext)
     const { mode } = useContext(modeContext)
 
 
@@ -46,7 +46,6 @@ const SignUp = () => {
                 console.log(user)
                 form.reset();
                 setSuccess('Signup Successful')
-                handleMailVarification();
                 handleProfile(name, photo)
                 setError(null)
             })
@@ -62,18 +61,6 @@ const SignUp = () => {
         updateUser(name, photo)
             .then(() => console.log('Profile updated:', name, photo))
             .catch(err => console.log(err))
-    }
-
-    //varification
-    const handleMailVarification = () => {
-
-        handleVarificationMail()
-            .then(() => {
-
-                toast.success('A varification link send to youe email! please varify..');
-
-            })
-
     }
 
     return (

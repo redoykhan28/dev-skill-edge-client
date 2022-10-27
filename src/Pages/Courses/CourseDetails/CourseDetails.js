@@ -9,6 +9,7 @@ import { modeContext } from '../../../Context/ModeContext';
 
 const ref = React.createRef();
 
+
 const CourseDetails = () => {
 
     //use context
@@ -21,7 +22,7 @@ const CourseDetails = () => {
     return (
         <div className='container'>
             <div className='text-end'>
-                <Pdf targetRef={ref} filename="Course details.pdf">
+                <Pdf targetRef={ref} className={mode ? 'bg-dark' : 'bg-light'} filename="Course details.pdf">
                     {({ toPdf }) => <Link onClick={toPdf} className='text-decoration-none'><button className='btn downloadbtn'><FaDownload />  Download</button></Link>
                     }
                 </Pdf>
@@ -43,7 +44,7 @@ const CourseDetails = () => {
                 <div className="col-md-6">
                     {
                         mode ?
-                            <img className='img-fluid w-75 mx-5 mt-5 mb-5' src={img} alt="img" />
+                            <img className='img-fluid rounded-4 w-75 mx-5 mt-5 mb-5' src={img} alt="img" />
                             :
                             <img className='img-fluid mb-5' src={img} alt="img" />
                     }
