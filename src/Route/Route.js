@@ -11,6 +11,7 @@ import CourseDetails from "../Pages/Courses/CourseDetails/CourseDetails";
 import Checkout from "../Pages/Courses/CheckOut/Checkout";
 import Profile from "../Pages/Profile/Profile";
 import PrivateRoute from "./PrivateRoute";
+import mofoundimg from '../images/404-removebg-preview.png'
 
 //setup route
 export const route = createBrowserRouter([
@@ -77,6 +78,15 @@ export const route = createBrowserRouter([
             {
                 path: '/profile',
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>
+            },
+            {
+                path: '*', element: <div className='ftxt text-center'>
+                    <h1 className='mt-5'>
+                        This page is not available.</h1>
+                    <p className='text-muted'>Sorry! 404. The page you are looking for is not available</p>
+                    <img className='img-fluid w-25 mx-auto' src={mofoundimg} alt="" />
+                </div>
+
             }
         ]
     }
